@@ -16,5 +16,5 @@ Simple as possible for this small app.
 Will introduce a DAO module to seperate implementation of data store from interface. This will allow me to swap in a persistant store in the future as long as get my interfaces correct. 
 
 ## Testing. 
-Unit testing a must. 
-Integretino testing. Drawing the boundaries around the whole application. 
+TDD - Unit testing a must. 
+Integretion testing. Drawing the boundaries around the whole application. 
