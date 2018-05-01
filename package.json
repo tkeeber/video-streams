@@ -1,0 +1,22 @@
+{
+  "name": "video-streams",
+  "version": "1.0.0",
+  "description": "Node app to return video streams being watched by a user",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tkeeber/video-streams.git"
+  },
+  "author": "Tom Keeber",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tkeeber/video-streams/issues"
+  },
+  "homepage": "https://github.com/tkeeber/video-streams#readme",
+  "devDependencies": {
+    "yarn": "^1.6.0"
+  }
+}
