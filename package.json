@@ -1,23 +1,52 @@
 {
   "name": "video-streams",
+  "description": "Provides a API for user video streaming data",
   "version": "1.0.0",
-  "description": "Node app to return video streams being watched by a user",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest"
+  "author": "Tom Keeber <thomas.keeber@sky.uk>",
+  "config": {
+    "pre-git": {
+      "commit-msg": "simple",
+      "pre-commit": [
+        "npm run deps",
+        "npm test",
+        "git add src/*.js"
+      ],
+      "pre-push": [
+        "npm run unused-deps"
+      ]
+    }
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tkeeber/video-streams.git"
-  },
-  "author": "Tom Keeber",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/tkeeber/video-streams/issues"
+  "engines": {
+    "node": ">=8"
   },
   "homepage": "https://github.com/tkeeber/video-streams#readme",
+  "license": "MIT",
+  "main": "src/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tkeeber/video-streams.git"
+  },
+  "scripts": {
+    "deps": "deps-ok && dependency-check --no-dev .",
+    "lint": "eslint . --cache",
+    "postlint": "eslint --fix src/*.js",
+    "prelint": "npm run pretty",
+    "pretest": "npm run lint",
+    "pretty": "prettier-standard 'src/*.js'",
+    "test": "npm run unit",
+    "unit": "jest",
+    "unused-deps": "dependency-check --unused --no-dev ."
+  },
   "devDependencies": {
-    "yarn": "^1.6.0",
-    "jest": "^22.1.0"
+    "dependency-check": "3.1.0",
+    "deps-ok": "1.4.1",
+    "eslint": "4.19.1",
+    "eslint-plugin-immutable": "1.0.0",
+    "eslint-plugin-import": "2.11.0",
+    "eslint-plugin-jest": "21.15.1",
+    "jest": "22.4.3",
+    "pre-git": "3.17.1",
+    "prettier-standard": "8.0.1",
+    "standard": "11.0.1"
   }
 }
